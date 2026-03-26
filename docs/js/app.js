@@ -42,7 +42,7 @@ function normalizarClasse(texto) {
  * @returns {number} Média aritmética das notas
  */
 function calcularMedia(nota1, nota2, nota3) {
-    return (nota1 + nota2) / 2;
+    return (nota1 + nota2 + nota3) / 3;
 }
 
 /**
@@ -55,7 +55,7 @@ function calcularMedia(nota1, nota2, nota3) {
  */
 function determinarSituacao(media) {
     if (media >= 7) return 'Aprovado';
-    if (media >= 5) return 'Recuperação';
+    if (media >= 5) return 'Recuperacao';
     return 'Reprovado';
 }
 
@@ -163,7 +163,7 @@ function atualizarTabela(filtro = '') {
 function atualizarEstatisticas() {
     const total = alunos.length;
     const aprovados = alunos.filter(a => a.situacao === 'Aprovado').length;
-    const recuperacao = alunos.filter(a => a.situacao === 'Recuperação').length;
+    const recuperacao = alunos.filter(a => a.situacao === 'Recuperacao').length;
     const reprovados = alunos.filter(a => a.situacao === 'Reprovado').length;
 
     document.getElementById('stat-total').textContent = total;
